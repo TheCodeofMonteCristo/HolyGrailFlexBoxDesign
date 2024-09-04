@@ -1,4 +1,73 @@
 
+/* Flexbox Version of the CSS Styling, I'm not sure if running two of these at the same time remains compatible*/
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/* COLORS and FONTS */
+body {
+    color: red;
+    text-align: center;
+    font-size: 24px;
+    line-height: 3;
+}
+header {
+    background: blue;
+}
+main {
+    background: yellow;
+}
+footer {
+    background: green;
+}
+.left-sidebar {
+    background: purple;
+}
+.right-sidebar {
+    background: forestgreen;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;    
+    } 
+    header, 
+    footer {
+        width: 100%;
+    }
+    main {
+        flex: 2;
+        order: 2;
+        min-height: 80vh;
+    }
+    
+    .left-sidebar {
+        order: 1;
+        flex: 1;
+    }
+    .right-sidebar {
+        flex: 1;
+        order: 3;
+    }
+    footer {
+        order: 4;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -8,6 +77,9 @@
 
 
 /* Grid version of the Holy Grail*/
+
+
+/*Commenting Out Grid Solution to Test Flexbox
 html,
 body {
     padding: 0;
@@ -67,3 +139,7 @@ footer {
         grid-column: 1 / 2;
     }
 }
+
+
+
+Commenting Out Grid Solution to Test Flexbox*/
